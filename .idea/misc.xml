@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/einkaufen_layout.xml" value="0.2015625" />
+        <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/haushalt_layout.xml" value="0.2015625" />
+        <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/login_layout.xml" value="0.1" />
+        <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/putzen_layout.xml" value="0.2015625" />
+        <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/registrierung.xml" value="0.25" />
+        <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/start_layout.xml" value="0.2015625" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

@@ -1,4 +1,4 @@
-<resources>
+    <resources>
     <string name="app_name">Ha-Pla</string>
     <string name="appName">HA-PLA</string>
     <string name="haushalt">Haushalt</string>
@@ -14,4 +14,8 @@
     <string name="passwort">Passwort</string>
     <string name="text_login">deinem persönlicher Haushaltsplaner</string>
     <string name="app_icon">App Icon</string>
-</resources>
+    <string name="vorname">Vorname</string>
+    <string name="nachname">Nachname</string>
+    <string name="email">Email</string>
+    <string name="alreadyRegistered">Already have an Account? \n Click here to Login!</string>
+    </resources>
