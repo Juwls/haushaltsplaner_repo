@@ -35,6 +35,9 @@
             </activity>
 
         <activity
+            android:name=".haushaltErstellen"
+            android:exported="true" />
+        <activity
             android:name=".Haushalt"
             android:exported="true" />
         <activity
