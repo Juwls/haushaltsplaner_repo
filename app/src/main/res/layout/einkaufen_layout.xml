@@ -7,7 +7,7 @@
     android:background="#CFD6CF">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tVEinkaufenTitel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -21,19 +21,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/eTEinkaufenEingabe"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        android:hint="Name"
+        app:layout_constraintBottom_toTopOf="@+id/rVEinkaufenListe"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/neuereintrag_einkaufen"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toEndOf="@+id/rVEinkaufenListe"
+        app:layout_constraintTop_toBottomOf="@+id/tVEinkaufenTitel" />
 
     <TextView
-        android:id="@+id/neuereintrag_einkaufen"
+        android:id="@+id/tVEinkaufen"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:gravity="center"
@@ -42,18 +42,18 @@
         android:text="@string/eintrag_einkaufen"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintBottom_toTopOf="@+id/rVEinkaufenListe"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tVEinkaufenTitel" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/rVEinkaufenListe"
         android:layout_width="0dp"
         android:layout_height="530dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/tVEinkaufenTitel"
         app:layout_constraintVertical_bias="0.502" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
