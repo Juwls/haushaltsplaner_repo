@@ -7,7 +7,7 @@
     android:background="#CFD6CF">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tVToDoTitel"
         android:layout_width="0dp"
         android:layout_height="59dp"
         android:gravity="center"
@@ -20,41 +20,38 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/neuereintrag_todo"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <TextView
-        android:id="@+id/neuereintrag_todo"
+        android:id="@+id/eTToDoEingabe"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:gravity="center"
-        android:paddingLeft="@dimen/buttons_vertical"
-        android:paddingRight="@dimen/buttons_vertical"
-        android:text="@string/eintrag_todo"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView6"
+        android:layout_marginStart="24dp"
+        android:ems="10"
+        android:hint="@string/eintrag"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/rVToDoListe"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/tVToDoTitel"
         app:layout_constraintVertical_bias="1.0" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView6"
+        android:id="@+id/rVToDoListe"
         android:layout_width="411dp"
         android:layout_height="564dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/tVToDoTitel"
         app:layout_constraintVertical_bias="0.75" />
+
+    <Button
+        android:id="@+id/buttonToDo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:background="#4C7839"
+        android:text="Button"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eTToDoEingabe"
+        app:layout_constraintTop_toBottomOf="@+id/tVToDoTitel" />
 </androidx.constraintlayout.widget.ConstraintLayout>

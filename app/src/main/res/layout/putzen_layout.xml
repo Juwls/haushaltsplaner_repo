@@ -7,7 +7,7 @@
     android:background="#CFD6CF">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tVPutzenTitel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -20,40 +20,39 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView5"
+        android:id="@+id/rVPutzenListe"
         android:layout_width="0dp"
         android:layout_height="600dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/tVPutzenTitel"
         app:layout_constraintVertical_bias="0.616" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName8"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/neuereintrag_putzen"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <TextView
-        android:id="@+id/neuereintrag_putzen"
+        android:id="@+id/eTPutzenEingabe"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:gravity="center"
-        android:paddingLeft="@dimen/buttons_vertical"
-        android:paddingRight="@dimen/buttons_vertical"
-        android:text="@string/eintrag_putzen"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView5"
+        android:ems="10"
+        android:hint="@string/eintrag"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/rVPutzenListe"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/tVPutzenTitel"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/buttonPutzen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#4C7839"
+        android:text="Button"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toEndOf="@+id/eTPutzenEingabe"
+        app:layout_constraintTop_toBottomOf="@+id/tVPutzenTitel" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

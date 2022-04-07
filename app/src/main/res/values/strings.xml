@@ -29,4 +29,5 @@
             <string name="eintrag_putzen">neuer Eintrag:</string>
             <string name="eintrag_einkaufen">Neuer Eintrag</string>
             <string name="eintrag_todo">Neuer Eintrag:</string>
+        <string name="eintrag">Eintrag hinzufügen</string>
     </resources>

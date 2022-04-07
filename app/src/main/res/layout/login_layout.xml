@@ -20,23 +20,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_login" />
+        app:layout_constraintTop_toBottomOf="@+id/tVLoginText" />
 
     <TextView
-        android:id="@+id/willkommen"
+        android:id="@+id/tVLoginTitel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/willkommen"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/text_login"
+        app:layout_constraintBottom_toTopOf="@+id/tVLoginText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/iVLoginLogo" />
 
     <Button
-        android:id="@+id/einloggen"
+        android:id="@+id/buttonLoginEinloggen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#4C7839"
@@ -48,7 +48,7 @@
         android:paddingBottom="@dimen/buttons_vertical"
         android:text="@string/einloggen"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/registrieren"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLoginRegistrieren"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,19 +64,19 @@
         android:inputType="textPassword"
         android:textColorHint="#757575"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/einloggen"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLoginEinloggen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eTEmail" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iVLoginLogo"
         android:layout_width="112dp"
         android:layout_height="105dp"
         android:contentDescription="@string/app_icon"
         android:foreground="@drawable/ic_launcher_foreground"
-        app:layout_constraintBottom_toTopOf="@+id/willkommen"
+        app:layout_constraintBottom_toTopOf="@+id/tVLoginTitel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +85,7 @@
         tools:ignore="ImageContrastCheck" />
 
     <Button
-        android:id="@+id/registrieren"
+        android:id="@+id/buttonLoginRegistrieren"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#4C7839"
@@ -101,10 +101,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/einloggen" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonLoginEinloggen" />
 
     <TextView
-        android:id="@+id/text_login"
+        android:id="@+id/tVLoginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_login"
@@ -114,6 +114,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/willkommen" />
+        app:layout_constraintTop_toBottomOf="@+id/tVLoginTitel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

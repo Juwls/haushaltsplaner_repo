@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class Einkaufen extends Activity {
 
     private TextView einkaufenTitel;
-    private EditText
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

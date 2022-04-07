@@ -7,72 +7,59 @@
     android:background="#CFD6CF">
 
     <TextView
-        android:id="@+id/mitgliederhinzufuegen2"
+        android:id="@+id/tVHaushaltTitel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:text="@string/mitgliederinbestehendenhaushalt"
+        android:text="@string/haushalt"
         android:textColor="#000000"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tVHaushaltMitgliederListe"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView4" />
+        app:layout_constraintTop_toBottomOf="@+id/tVHaushaltName" />
+
+    <TextView
+        android:id="@+id/tVHaushaltName"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/haushalt"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tVHaushaltTitel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tVHaushaltMitgliederListe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mitgliederanzeigen"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/rVHaushaltListe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVHaushaltTitel" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rVHaushaltListe"
+        android:layout_width="413dp"
+        android:layout_height="151dp"
+        app:layout_constraintBottom_toTopOf="@+id/tVmitgliederHinzufuegenText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVHaushaltMitgliederListe" />
 
     <Button
-        android:id="@+id/email_einladung2"
+        android:id="@+id/buttonHaushalthinzufuegen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="#4C7839"
-        android:paddingLeft="@dimen/box_gap_horizontal"
-        android:paddingTop="@dimen/buttons_vertical"
-        android:paddingRight="@dimen/box_gap_horizontal"
-        android:paddingBottom="@dimen/buttons_vertical"
-        android:text="@string/email_einladung"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/email"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textColorHint="#757575"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add2" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="@string/benutzer"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textColorHint="#757575"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mitgliederhinzufuegen2" />
-
-    <Button
-        android:id="@+id/add2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:background="#4C7839"
         android:paddingLeft="@dimen/box_gap_horizontal"
         android:paddingTop="@dimen/buttons_vertical"
@@ -80,58 +67,72 @@
         android:paddingBottom="@dimen/buttons_vertical"
         android:text="@string/add"
         android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/eTHaushaltMailEingabe"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/eTHaushaltBenutzerNameHint" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="411dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:text="@string/haushalt"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView4"
-        android:layout_width="413dp"
-        android:layout_height="151dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mitgliederanzeigen" />
-
-    <TextView
-        android:id="@+id/mitgliederanzeigen"
+    <EditText
+        android:id="@+id/eTHaushaltBenutzerNameHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/mitgliederanzeigen"
-        android:textColor="#000000"
+        android:ems="10"
+        android:hint="@string/benutzer"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textColorHint="#757575"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonHaushalthinzufuegen"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/haushaltsname_haushalt" />
+        app:layout_constraintTop_toBottomOf="@+id/tVmitgliederHinzufuegenText" />
 
     <TextView
-        android:id="@+id/haushaltsname_haushalt"
+        android:id="@+id/tVmitgliederHinzufuegenText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/haushalt"
+        android:text="@string/mitgliederinbestehendenhaushalt"
         android:textColor="#000000"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/eTHaushaltBenutzerNameHint"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.197"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/rVHaushaltListe" />
+
+    <Button
+        android:id="@+id/ButtonEmailEinladungHaushalt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#4C7839"
+        android:paddingLeft="@dimen/box_gap_horizontal"
+        android:paddingTop="@dimen/buttons_vertical"
+        android:paddingRight="@dimen/box_gap_horizontal"
+        android:paddingBottom="@dimen/buttons_vertical"
+        android:text="@string/email_einladung"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTHaushaltMailEingabe" />
+
+    <EditText
+        android:id="@+id/eTHaushaltMailEingabe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/email"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textColorHint="#757575"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonEmailEinladungHaushalt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHaushalthinzufuegen" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
