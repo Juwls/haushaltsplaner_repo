@@ -8,10 +8,12 @@ import android.widget.CheckedTextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class Einkaufen_RecyclerViewAdapter extends RecyclerView.Adapter<Einkaufen_RecyclerViewAdapter.MyViewHolder> {
     Context context;
 
-    public Einkaufen_RecyclerViewAdapter(Context context, ArrayList<Einkaufsliste>) {
+    public Einkaufen_RecyclerViewAdapter(Context context, ArrayList<EinkaufenData>einkaufsliste) {
         this.context = context;
     }
 
@@ -31,7 +33,8 @@ public class Einkaufen_RecyclerViewAdapter extends RecyclerView.Adapter<Einkaufe
 
     @Override
     public int getItemCount() {
-        return 0;
+
+        return einkaufsliste.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
