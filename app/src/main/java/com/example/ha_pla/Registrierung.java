@@ -12,11 +12,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -27,14 +24,14 @@ public class Registrierung extends Activity {
     private EditText eTVorname, eTNachname, eTBenutzername, eTEmail, eTPasswort;
     private TextView tVAlreadyRegistered;
     private Button btnRegister;
-    private String URL = "http://10.0.2.2/android/registration.php";
+    private final String URL = "http://10.0.2.2/android/registration.php";
     private String vorname, nachname, benutzername, email, passwort;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registrierung);
+        setContentView(R.layout.registrierung_layout);
         eTVorname = findViewById(R.id.eTVorname);
         eTNachname = findViewById(R.id.eTNachname);
         eTBenutzername = findViewById(R.id.eTBenutzername);
@@ -56,7 +53,9 @@ public class Registrierung extends Activity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, response -> {
                 if (response.equals("success")) {
                     Toast.makeText(Registrierung.this, "registration successful", Toast.LENGTH_SHORT).show();
-                    btnRegister.setClickable(false);
+                    Intent zeigeLogin = new Intent(Registrierung.this, Login.class);
+                    startActivity(zeigeLogin);
+                    finish();
                 }
                 else if (response.equals("failure")) {
                     Toast.makeText(Registrierung.this, "registration failed", Toast.LENGTH_SHORT).show();
@@ -82,8 +81,9 @@ public class Registrierung extends Activity {
         }
     }
 
+
     public void LogIn (View view) {
-        Intent zeigeStart = new Intent(this, Login.class);
+        Intent zeigeStart = new Intent(Registrierung.this, Login.class);
         startActivity(zeigeStart);
         finish();
     }
