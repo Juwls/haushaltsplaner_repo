@@ -23,11 +23,11 @@
         <string name="mitgliederhinzufuegen">Füge deine Mitbewohner hinzu:</string>
         <string name="add">hinzufügen</string>
         <string name="email_einladung">Email Einladung versenden</string>
-            <string name="mitgliederanzeigen">Mitglieder des Haushalt:</string>
-            <string name="mitgliederinbestehendenhaushalt">weitere Mitglieder hinzufügen:</string>
-            <string name="summer_var">Summe</string>
-            <string name="eintrag_putzen">neuer Eintrag:</string>
-            <string name="eintrag_einkaufen">Neuer Eintrag</string>
-            <string name="eintrag_todo">Neuer Eintrag:</string>
+        <string name="mitgliederanzeigen">Mitglieder des Haushalt:</string>
+        <string name="mitgliederinbestehendenhaushalt">weitere Mitglieder hinzufügen:</string>
+        <string name="summer_var">Summe</string>
+        <string name="eintrag_putzen">neuer Eintrag:</string>
+        <string name="eintrag_einkaufen">Neuer Eintrag</string>
+        <string name="eintrag_todo">Neuer Eintrag:</string>
         <string name="eintrag">Eintrag hinzufügen</string>
     </resources>

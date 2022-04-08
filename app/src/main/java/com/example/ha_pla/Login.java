@@ -48,7 +48,8 @@ public class Login extends Activity {
                 } else if (response.equals("failure")) {
                     Toast.makeText(Login.this, "Login fehlgeschlagen", Toast.LENGTH_SHORT).show();
                 }
-            }, error -> Toast.makeText(Login.this, error.toString().trim(), Toast.LENGTH_SHORT).show()){
+            }, error -> Toast.makeText(Login.this, error.toString().trim(), Toast.LENGTH_SHORT).show())
+            {
 
                 @NonNull
                 @Override
