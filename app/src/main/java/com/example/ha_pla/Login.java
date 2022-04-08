@@ -21,9 +21,9 @@ import java.util.Map;
 
 public class Login extends Activity {
 
+    private final String URL = "http://10.0.2.2/android/login.php";
     private EditText eTEmail, eTPasswort;
     private String email, passwort;
-    private final String URL = "http://10.0.2.2/android/login.php";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -73,3 +73,4 @@ public class Login extends Activity {
         finish();
     }
 }
+
