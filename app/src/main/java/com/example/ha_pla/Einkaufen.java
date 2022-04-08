@@ -10,26 +10,29 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Einkaufen extends Activity {
 
-    private EditText eTEinkaufenEingabe;
-    private String einkaufenEingabe;
-    private String URL = "http://10.0.2.2/android/einkaufen.php";
     private RecyclerView rVEinkaufenListe;
-    private RecyclerView.LayoutManager rVEinkaufenListeLayoutManager;
-    private RecyclerView.Adapter rVEinkaufenListeAdapter;
-
+    private final String URL = "http://10.0.2.2/android/einkaufen.php";
     ArrayList<EinkaufenData> einkaufsliste = new ArrayList<>();
 
 
@@ -38,47 +41,50 @@ public class Einkaufen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.einkaufen_layout);
 
-        eTEinkaufenEingabe = findViewById(R.id.eTEinkaufenEingabe);
-        rVEinkaufenListe = (RecyclerView) findViewById(R.id.rVEinkaufenListe);
+        rVEinkaufenListe = findViewById(R.id.rVEinkaufenListe);
+        rVEinkaufenListe.setHasFixedSize(true);
+        rVEinkaufenListe.setLayoutManager(new LinearLayoutManager(this));
+        einkaufsliste = new ArrayList<>();
+
+        ladeEinkaufslisteVonDb();
 
     }
 
-    private void setUp(){
+    private void ladeEinkaufslisteVonDb(){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
+            response -> {
+                try {
+                    JSONArray array = new JSONArray(response);
+                    // TODO: identify haushalt of array and match to haushalt which was selected by the user
+                    for (int i = 0; i < array.length(); i++) {
 
-        String[] einkaufsliste = getResources().getStringArray();
+                        JSONObject einkaufsobjekt = array.getJSONObject(i);
 
+                        ///remove toast before merging to main///////////////////////////////////////
+                        //// https://stackoverflow.com/questions/7634518/getting-jsonobject-from-jsonarray
+                        Toast.makeText(Einkaufen.this, einkaufsobjekt.toString(), Toast.LENGTH_SHORT).show();
+                        ///////////////////////////////////////////////////////////
 
-        for(int i = 0; i < einkaufsliste.length;i++);
+                        einkaufsliste.add(new EinkaufenData(
+                                einkaufsobjekt.getString("einkaufsobjekt")
+                        ));
+                    }
 
+                    Einkaufen_RecyclerViewAdapter adapter = new Einkaufen_RecyclerViewAdapter(Einkaufen.this, einkaufsliste);
+                    rVEinkaufenListe.setAdapter(adapter);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }, error -> {
+                    Toast.makeText(Einkaufen.this, error.toString().trim(), Toast.LENGTH_SHORT).show();
+                });
+
+        /*
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(stringRequest);
+        */
+
+        Volley.newRequestQueue(this).add(stringRequest);
     }
-
-   /* public void einkaufHinzufuegen(View view){
-
-        einkaufenEingabe = eTEinkaufenEingabe.getText().toString().trim();
-
-        if(!einkaufenEingabe.equals("")){
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
-                    response -> {
-                if (response.equals("success")) {
-
-                }
-                else if (response.equals("failure")) {
-
-                }
-            }, error -> Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show()) {
-
-                @NonNull
-                @Override
-                protected Map<String, String> getParams() {
-                    HashMap<String, String> data = new HashMap<>();
-                    data.put("", );
-
-                    return data;
-                }
-            };
-            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-            requestQueue.add(stringRequest);
-        }
-
-    } */
 }
