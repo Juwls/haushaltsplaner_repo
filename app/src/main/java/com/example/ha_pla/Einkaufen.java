@@ -32,9 +32,9 @@ import java.util.Map;
 public class Einkaufen extends Activity {
 
     private RecyclerView rVEinkaufenListe;
-    private final String URL = "http://10.0.2.2/android/einkaufen.php";
+    private final String URL = "http://10.0.2.2/android/einkaufenAdd.php";
     ArrayList<EinkaufenData> einkaufsliste = new ArrayList<>();
-
+    private Button btnEinkaufHinzufuegen;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,6 +47,46 @@ public class Einkaufen extends Activity {
         einkaufsliste = new ArrayList<>();
 
         ladeEinkaufslisteVonDb();
+
+    }
+
+
+    public void speicherEinkaufsobjekt(){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
+                response -> {
+                    try {
+                        JSONArray array = new JSONArray(response);
+
+                        for (int i = 0; i < array.length(); i++) {
+
+                            JSONObject einkaufsobjekt = array.getJSONObject(i);
+
+                            ///remove toast before merging to main///////////////////////////////////////
+                            //// https://stackoverflow.com/questions/7634518/getting-jsonobject-from-jsonarray
+                            Toast.makeText(Einkaufen.this, einkaufsobjekt.toString(), Toast.LENGTH_SHORT).show();
+                            ///////////////////////////////////////////////////////////
+
+                            einkaufsliste.add(new EinkaufenData(
+                                    einkaufsobjekt.getString("einkaufsobjekt")
+                            ));
+                        }
+
+                        Einkaufen_RecyclerViewAdapter adapter = new Einkaufen_RecyclerViewAdapter(Einkaufen.this, einkaufsliste);
+                        rVEinkaufenListe.setAdapter(adapter);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }, error -> {
+            Toast.makeText(Einkaufen.this, error.toString().trim(), Toast.LENGTH_SHORT).show();
+        });
+
+        /*
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(stringRequest);
+        */
+
+        Volley.newRequestQueue(this).add(stringRequest);
 
     }
 
