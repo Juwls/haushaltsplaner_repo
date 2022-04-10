@@ -6,41 +6,11 @@
     android:layout_height="match_parent"
     android:background="#CFD6CF">
 
-    <TextView
-        android:id="@+id/mitgliederhinzufuegen2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:text="@string/mitgliederinbestehendenhaushalt"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView4" />
-
-    <Button
-        android:id="@+id/email_einladung2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="#4C7839"
-        android:paddingLeft="@dimen/box_gap_horizontal"
-        android:paddingTop="@dimen/buttons_vertical"
-        android:paddingRight="@dimen/box_gap_horizontal"
-        android:paddingBottom="@dimen/buttons_vertical"
-        android:text="@string/email_einladung"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
-
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/eTMitgliedHinzufuegen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="48dp"
         android:ems="10"
         android:hint="@string/email"
         android:importantForAutofill="no"
@@ -48,45 +18,30 @@
         android:textColorHint="#757575"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add2" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="@string/benutzer"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textColorHint="#757575"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mitgliederhinzufuegen2" />
+        app:layout_constraintTop_toBottomOf="@+id/rVHaushalt" />
 
     <Button
-        android:id="@+id/add2"
+        android:id="@+id/btnMitgliedHinzufuegen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:background="#4C7839"
+        android:onClick="mitgliedHinzufuegen"
         android:paddingLeft="@dimen/box_gap_horizontal"
         android:paddingTop="@dimen/buttons_vertical"
         android:paddingRight="@dimen/box_gap_horizontal"
         android:paddingBottom="@dimen/buttons_vertical"
-        android:text="@string/add"
+        android:text="@string/email_einladung"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/eTMitgliedHinzufuegen" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvHaushaltTitel"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -100,17 +55,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView4"
+        android:id="@+id/rVHaushalt"
         android:layout_width="413dp"
-        android:layout_height="151dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mitgliederanzeigen" />
+        app:layout_constraintTop_toBottomOf="@+id/tVMitgliederanzeigen" />
 
     <TextView
-        android:id="@+id/mitgliederanzeigen"
+        android:id="@+id/tVMitgliederanzeigen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -120,10 +75,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.139"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/haushaltsname_haushalt" />
+        app:layout_constraintTop_toBottomOf="@+id/tVHaushaltBezeichnung" />
 
     <TextView
-        android:id="@+id/haushaltsname_haushalt"
+        android:id="@+id/tVHaushaltBezeichnung"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -133,5 +88,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/tvHaushaltTitel" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,15 +15,15 @@
         <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/einkaufen_item.xml" value="0.203125" />
         <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/einkaufen_item_layout.xml" value="0.25" />
         <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/einkaufen_layout.xml" value="0.33" />
-        <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/einkaufen_listenobjekt_layout.xml" value="0.1" />
+        <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/einkaufen_listenobjekt_layout.xml" value="0.33" />
         <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/finanzfix_layout.xml" value="0.1875" />
         <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/finanzvariabel_layout.xml" value="0.38697916666666665" />
-        <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/haushalt_layout.xml" value="0.2015625" />
+        <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/haushalt_layout.xml" value="0.33" />
         <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/haushalterstellen_layout.xml" value="0.38697916666666665" />
         <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/login_layout.xml" value="0.1" />
         <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/putzen_layout.xml" value="0.2015625" />
         <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/registrierung.xml" value="0.25" />
-        <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/start_layout.xml" value="0.2015625" />
+        <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/start_layout.xml" value="0.5" />
         <entry key="..\:/haushaltsplaner_repo/app/src/main/res/layout/todo_layout.xml" value="0.38697916666666665" />
       </map>
     </option>

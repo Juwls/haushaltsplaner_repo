@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/add" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/eTTmp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -76,10 +76,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.124"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/eTTmp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/eTErstelleHaushaltName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -118,6 +118,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.263"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/eTErstelleHaushaltName" />
+
+    <Button
+        android:id="@+id/btnHaushaltErstellen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="erstellen"
+        android:onClick="erstelleHaushalt"
+        app:layout_constraintBottom_toBottomOf="@+id/eTErstelleHaushaltName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eTErstelleHaushaltName"
+        app:layout_constraintTop_toTopOf="@+id/eTErstelleHaushaltName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
