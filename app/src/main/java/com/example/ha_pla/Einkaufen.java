@@ -39,9 +39,7 @@ public class Einkaufen extends Activity  {
     private Button btnEinkaufHinzufuegen;
     private EditText eTEinkaufenEingabe;
     private String einkaufenEingabe;
-    private Intent intent = getIntent();
-    private Bundle extras = intent.getExtras();
-    private String idHaushalt_extra = extras.getString("EXTRA_idHaushalt");
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,7 +58,7 @@ public class Einkaufen extends Activity  {
     }
 
 
-    public void speicherEinkaufsobjekt() {
+    public void speicherEinkaufsobjekt(View view) {
         einkaufenEingabe = eTEinkaufenEingabe.getText().toString().trim();
 
         if (!einkaufenEingabe.equals("")) {
@@ -75,6 +73,9 @@ public class Einkaufen extends Activity  {
 
                 }, error -> Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show()) {
 
+                private Intent intent = getIntent();
+                private Bundle extras = intent.getExtras();
+                private String idHaushalt_extra = extras.getString("EXTRA_idHaushalt");
                 @NonNull
                 @Override
                 protected Map<String, String> getParams() {
@@ -96,7 +97,7 @@ public class Einkaufen extends Activity  {
         }
     }
 
-    private void ladeEinkaufslisteVonDb() {
+    public void ladeEinkaufslisteVonDb() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_load,
                 response -> {
                     try {
@@ -118,6 +119,10 @@ public class Einkaufen extends Activity  {
                 }, error -> Toast.makeText(Einkaufen.this, error.toString().trim(), Toast.LENGTH_SHORT).show())
 
                 {
+
+                    private Intent intent = getIntent();
+                    private Bundle extras = intent.getExtras();
+                    private String idHaushalt_extra = extras.getString("EXTRA_idHaushalt");
                     @NonNull
                     @Override
                     protected Map<String, String> getParams() {
