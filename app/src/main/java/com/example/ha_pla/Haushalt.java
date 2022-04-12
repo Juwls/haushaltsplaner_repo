@@ -67,32 +67,35 @@ public class Haushalt extends Activity {
 
     }
 
-    public void mitgliedHinzufuegen(View view){
+    public void mitgliedHinzufuegen(View view) {
         mitgliedHinzufuegen = eTMitgliedHinzufuegen.getText().toString().trim();
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_mitgliedHinzufuegen, response -> {
-            if(response.equals("failure")){
-                Toast.makeText(Haushalt.this, "Ein Fehler ist aufgetreten", Toast.LENGTH_SHORT).show();
-            }else if(response.equals("success")){
-                Toast.makeText(Haushalt.this, "Neues Mitglied wurde hinzugefuegt", Toast.LENGTH_SHORT).show();
-            }
+        if (!mitgliedHinzufuegen.equals("")) {
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_mitgliedHinzufuegen, response -> {
+                if (response.equals("failure")) {
+                    Toast.makeText(Haushalt.this, "Ein Fehler ist aufgetreten", Toast.LENGTH_SHORT).show();
+                } else if (response.equals("success")) {
+                    Toast.makeText(Haushalt.this, "Neues Mitglied wurde hinzugefuegt", Toast.LENGTH_SHORT).show();
+                }
 
-        }, error -> Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show())
+            }, error -> Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show()) {
+                private Intent intent = getIntent();
+                private Bundle extras = intent.getExtras();
+                private String idHaushalt_extra = extras.getString("EXTRA_idHaushalt");
 
-        {
-            private Intent intent2 = getIntent();
-            private Bundle extras2 = intent2.getExtras();
-            private String idHaushalt_extra = extras2.getString("EXTRA_idHaushalt");
-            @NonNull
-            @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> data = new HashMap<>();
-                data.put("idHaushalt", idHaushalt_extra);
-                data.put("mitgliedHinzufuegen", mitgliedHinzufuegen);
-                return data;
-            }
-        };
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        requestQueue.add(stringRequest);
+                @NonNull
+                @Override
+                protected Map<String, String> getParams() {
+                    Map<String, String> data = new HashMap<>();
+                    data.put("idHaushalt", idHaushalt_extra);
+                    data.put("mitgliedHinzufuegen", mitgliedHinzufuegen);
+                    return data;
+                }
+            };
+            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+            requestQueue.add(stringRequest);
 
+        }else {
+            Toast.makeText(Haushalt.this, "Bitte geben Sie eine Email an", Toast.LENGTH_SHORT).show();
+        }
     }
 }
