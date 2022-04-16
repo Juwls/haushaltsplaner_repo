@@ -1,44 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#CFD6CF">
-
+    android:layout_height="wrap_content"
+    android:background="#CFD6CF"
+    android:orientation="vertical"
+    tools:context=".Putzen">
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
+        android:id="@+id/tVPutzenTitel"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
-        android:color="@color/teal_700"
-        android:text="Putzplan"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="@string/putzen"
+        android:textColor="#000000"
         android:textSize="24sp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-    </FrameLayout>
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="true"
+        android:scrollbarAlwaysDrawHorizontalTrack="false">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnFragMontag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Montag" />
+
+            <Button
+                android:id="@+id/btnFragDienstag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dienstag" />
+
+            <Button
+                android:id="@+id/btnFragMittwoch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mittwoch" />
+
+            <Button
+                android:id="@+id/btnFragDonnerstag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Donnerstag" />
+
+            <Button
+                android:id="@+id/btnFragFreitag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Freitag" />
+
+            <Button
+                android:id="@+id/btnFragSamstag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Samstag" />
+
+            <Button
+                android:id="@+id/btnFragSonntag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sonntag" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="752dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView2"
+            android:name="com.example.ha_pla.PutzenMontagFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_putzen_montag" />
+    </LinearLayout>
+</LinearLayout>

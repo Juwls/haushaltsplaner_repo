@@ -75,7 +75,7 @@
         android:layout_width="112dp"
         android:layout_height="105dp"
         android:contentDescription="@string/app_icon"
-        android:foreground="@drawable/ic_launcher_foreground"
+        android:foreground="@mipmap/ic_logo_foreground"
         app:layout_constraintBottom_toTopOf="@+id/willkommen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

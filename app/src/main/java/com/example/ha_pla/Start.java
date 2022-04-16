@@ -39,6 +39,9 @@ public class Start extends Activity {
 
     public void putzen (View view) {
         Intent zeigePutzen = new Intent(this, Putzen.class);
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        zeigePutzen.putExtras(extras);
         startActivity(zeigePutzen);
     }
 
