@@ -6,18 +6,8 @@
     android:layout_height="match_parent"
     android:background="#CFD6CF">
 
-    <EditText
-        android:id="@+id/eTFinanzFixEingabe"
-        android:layout_width="wrap_content"
-        android:layout_height="61dp"
-        android:ems="10"
-        android:hint="@string/eintrag"
-        android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/tVfinanzfixTitel"
-        tools:layout_editor_absoluteX="33dp" />
-
     <TextView
-        android:id="@+id/tVfinanzfixSummeLabel"
+        android:id="@+id/summe_var2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="start|center_vertical"
@@ -26,14 +16,14 @@
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/eTfinanzfixSumme"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNumberDecimal2"
         app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rVfinanzfix"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView2"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/eTfinanzfixSumme"
+        android:id="@+id/editTextNumberDecimal2"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:ems="10"
@@ -43,41 +33,71 @@
         android:padding="@dimen/box_gap_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rVfinanzfix" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
 
     <TextView
-        android:id="@+id/tVfinanzfixTitel"
-        android:layout_width="0dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="40dp"
+        android:id="@+id/tVFixkostenTitel"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:gravity="center"
         android:text="@string/finanzfix"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rVfinanzfix"
+        android:id="@+id/recyclerView2"
         android:layout_width="0dp"
-        android:layout_height="471dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="156dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eTFinanzFixEingabe" />
+        app:layout_constraintTop_toBottomOf="@+id/tVFixkostenTitel" />
 
     <Button
-        android:id="@+id/buttonFinanzFix"
+        android:id="@+id/buttonAddFix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
-        android:background="#4C7839"
-        android:text="Button"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/button_radius"
+        android:padding="@dimen/buttons_vertical"
+        android:text="@string/add"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/eTFinanzFixEingabe"
-        app:layout_constraintTop_toBottomOf="@+id/tVfinanzfixTitel" />
+        app:layout_constraintTop_toBottomOf="@+id/tVFixkostenTitel" />
+
+    <EditText
+        android:id="@+id/eTBezeichnungFix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/bezeichnung"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAddFix"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVFixkostenTitel" />
+
+    <EditText
+        android:id="@+id/eTPreisFix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/finanzfix"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAddFix"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTBezeichnungFix" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,133 +6,87 @@
     android:layout_height="match_parent"
     android:background="#CFD6CF">
 
-    <TextView
-        android:id="@+id/tVHaushaltTitel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/haushalt"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/tVHaushaltMitgliederListe"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tVHaushaltName" />
-
-    <TextView
-        android:id="@+id/tVHaushaltName"
-        android:layout_width="411dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/haushalt"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tVHaushaltTitel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tVHaushaltMitgliederListe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mitgliederanzeigen"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/rVHaushaltListe"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tVHaushaltTitel" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rVHaushaltListe"
-        android:layout_width="413dp"
-        android:layout_height="151dp"
-        app:layout_constraintBottom_toTopOf="@+id/tVmitgliederHinzufuegenText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tVHaushaltMitgliederListe" />
-
-    <Button
-        android:id="@+id/buttonHaushalthinzufuegen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#4C7839"
-        android:paddingLeft="@dimen/box_gap_horizontal"
-        android:paddingTop="@dimen/buttons_vertical"
-        android:paddingRight="@dimen/box_gap_horizontal"
-        android:paddingBottom="@dimen/buttons_vertical"
-        android:text="@string/add"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/eTHaushaltMailEingabe"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eTHaushaltBenutzerNameHint" />
-
     <EditText
-        android:id="@+id/eTHaushaltBenutzerNameHint"
+        android:id="@+id/eTMitgliedHinzufuegen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/benutzer"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textColorHint="#757575"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHaushalthinzufuegen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tVmitgliederHinzufuegenText" />
-
-    <TextView
-        android:id="@+id/tVmitgliederHinzufuegenText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mitgliederinbestehendenhaushalt"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/eTHaushaltBenutzerNameHint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rVHaushaltListe" />
-
-    <Button
-        android:id="@+id/ButtonEmailEinladungHaushalt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#4C7839"
-        android:paddingLeft="@dimen/box_gap_horizontal"
-        android:paddingTop="@dimen/buttons_vertical"
-        android:paddingRight="@dimen/box_gap_horizontal"
-        android:paddingBottom="@dimen/buttons_vertical"
-        android:text="@string/email_einladung"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.207"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eTHaushaltMailEingabe" />
-
-    <EditText
-        android:id="@+id/eTHaushaltMailEingabe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:ems="10"
         android:hint="@string/email"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:textColorHint="#757575"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/ButtonEmailEinladungHaushalt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHaushalthinzufuegen" />
+        app:layout_constraintTop_toBottomOf="@+id/rVHaushalt" />
 
+    <Button
+        android:id="@+id/btnMitgliedHinzufuegen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#4C7839"
+        android:onClick="mitgliedHinzufuegen"
+        android:paddingLeft="@dimen/box_gap_horizontal"
+        android:paddingTop="@dimen/buttons_vertical"
+        android:paddingRight="@dimen/box_gap_horizontal"
+        android:paddingBottom="@dimen/buttons_vertical"
+        android:text="@string/email_einladung"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTMitgliedHinzufuegen" />
+
+    <TextView
+        android:id="@+id/tvHaushaltTitel"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="@string/haushalt"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rVHaushalt"
+        android:layout_width="413dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVMitgliederanzeigen" />
+
+    <TextView
+        android:id="@+id/tVMitgliederanzeigen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/mitgliederanzeigen"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVHaushaltBezeichnung" />
+
+    <TextView
+        android:id="@+id/tVHaushaltBezeichnung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/haushalt"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHaushaltTitel" />
 </androidx.constraintlayout.widget.ConstraintLayout>

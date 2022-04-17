@@ -6,24 +6,12 @@
     android:layout_height="match_parent"
     android:background="#CFD6CF">
 
-    <EditText
-        android:id="@+id/eTFinanzVarEingabe"
-        android:layout_width="wrap_content"
-        android:layout_height="61dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="@string/eintrag"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tVFinanzVariabelTitel" />
-
     <TextView
-        android:id="@+id/tVFinanzVariabelTitel"
-        android:layout_width="wrap_content"
+        android:id="@+id/tVKostenVarTitel"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
         android:text="@string/finanzvar"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -32,18 +20,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rVFinanzVarEintraege"
-        android:layout_width="415dp"
-        android:layout_height="437dp"
+        android:id="@+id/recyclerView3"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eTFinanzVarEingabe"
-        app:layout_constraintVertical_bias="0.179" />
+        app:layout_constraintTop_toBottomOf="@+id/tVKostenVarTitel"
+        app:layout_constraintVertical_bias="0.57" />
 
     <TextView
-        android:id="@+id/tVFinanzVarSummeLabel"
+        android:id="@+id/summe_var"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="start|center_vertical"
@@ -52,12 +40,12 @@
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/eTFinanzVarSumme"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNumberDecimal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rVFinanzVarEintraege" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView3" />
 
     <EditText
-        android:id="@+id/eTFinanzVarSumme"
+        android:id="@+id/editTextNumberDecimal"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:ems="10"
@@ -67,20 +55,50 @@
         android:padding="@dimen/box_gap_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rVFinanzVarEintraege"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView3"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
-        android:id="@+id/buttonFinanzVar"
+        android:id="@+id/buttonAddVar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="#4C7839"
-        android:text="Button"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_radius"
+        android:padding="@dimen/buttons_vertical"
+        android:text="@string/addEintrag"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
-        app:layout_constraintStart_toEndOf="@+id/eTFinanzVarEingabe"
-        app:layout_constraintTop_toBottomOf="@+id/tVFinanzVariabelTitel" />
+        app:layout_constraintTop_toBottomOf="@+id/tVKostenVarTitel" />
+
+    <EditText
+        android:id="@+id/eTBezeichnungVar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/bezeichnung"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAddVar"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVKostenVarTitel" />
+
+    <EditText
+        android:id="@+id/eTPreisVar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/finanzvar"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAddVar"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTBezeichnungVar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

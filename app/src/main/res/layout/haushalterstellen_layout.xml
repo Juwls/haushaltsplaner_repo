@@ -7,7 +7,7 @@
     android:background="#CFD6CF">
 
     <TextView
-        android:id="@+id/tVHaushaltErstellenTitel"
+        android:id="@+id/title_he"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tVHaushalterstellenBenennenText"
+        android:id="@+id/benennen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
@@ -31,10 +31,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.346"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tVHaushaltErstellenTitel" />
+        app:layout_constraintTop_toBottomOf="@+id/title_he" />
 
     <EditText
-        android:id="@+id/eTHaushaltErstellenEmail"
+        android:id="@+id/editTextTextPersonName3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -47,10 +47,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHaushaltErstellenBenutzerAdden" />
+        app:layout_constraintTop_toBottomOf="@+id/add" />
 
     <EditText
-        android:id="@+id/eTHaushaltErstellenBenutzerEingabe"
+        android:id="@+id/eTTmp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -63,10 +63,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tVHaushaltErstellenMitbewohnerAdden" />
+        app:layout_constraintTop_toBottomOf="@+id/mitgliederhinzufuegen" />
 
     <Button
-        android:id="@+id/buttonHaushaltErstellenBenutzerAdden"
+        android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -76,10 +76,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.124"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eTHaushaltErstellenBenutzerEingabe" />
+        app:layout_constraintTop_toBottomOf="@+id/eTTmp" />
 
     <EditText
-        android:id="@+id/eTHaushaltErstellenBenennenFeld"
+        android:id="@+id/eTErstelleHaushaltName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -92,10 +92,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tVHaushalterstellenBenennenText" />
+        app:layout_constraintTop_toBottomOf="@+id/benennen" />
 
     <Button
-        android:id="@+id/buttonHaushalterstellenEmail"
+        android:id="@+id/email_einladung"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -105,10 +105,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.244"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eTHaushaltErstellenEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
 
     <TextView
-        android:id="@+id/tVHaushaltErstellenMitbewohnerAdden"
+        android:id="@+id/mitgliederhinzufuegen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -118,6 +118,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.263"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eTHaushaltErstellenBenennenFeld" />
+        app:layout_constraintTop_toBottomOf="@+id/eTErstelleHaushaltName" />
+
+    <Button
+        android:id="@+id/btnHaushaltErstellen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="erstellen"
+        android:onClick="erstelleHaushalt"
+        app:layout_constraintBottom_toBottomOf="@+id/eTErstelleHaushaltName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eTErstelleHaushaltName"
+        app:layout_constraintTop_toTopOf="@+id/eTErstelleHaushaltName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

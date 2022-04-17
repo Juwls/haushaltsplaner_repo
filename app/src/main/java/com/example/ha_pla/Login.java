@@ -21,7 +21,10 @@ import java.util.Map;
 
 public class Login extends Activity {
 
+    //private final String URL = "http://87.106.169.186/hapla/android/login.php";
+    //private final String URL_istHaushaltVorhanden = "http://87.106.169.186/hapla/android/haushaltAbrufen.php";
     private final String URL = "http://10.0.2.2/android/login.php";
+    private final String URL_istHaushaltVorhanden = "http://10.0.2.2/android/haushaltAbrufen.php";
     private EditText eTEmail, eTPasswort;
     private String email, passwort;
 
@@ -29,7 +32,7 @@ public class Login extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
-        email = passwort = ""; // initialize empty strings
+        email = passwort = "";
         eTEmail = findViewById(R.id.eTEmail);
         eTPasswort = findViewById(R.id.eTPasswort);
     }
@@ -40,11 +43,40 @@ public class Login extends Activity {
         if (!email.equals("") && !passwort.equals("")) {
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, response -> {
-
                 if (response.equals("success")) {
-                    Intent zeigeStart = new Intent(this, Start.class);
-                    startActivity(zeigeStart);
-                    finish();
+                    StringRequest stringRequestIstHaushaltVorhanden= new StringRequest(Request.Method.POST, URL_istHaushaltVorhanden, responseIstHaushaltVorhanden -> {
+                        if (responseIstHaushaltVorhanden.equals("failure")) {
+                            Intent zeigeHaushaltErstellen = new Intent(this, HaushaltErstellen.class);
+                            Bundle extras = new Bundle();
+                            extras.putString("EXTRA_email", email);
+                            zeigeHaushaltErstellen.putExtras(extras);
+                            startActivity(zeigeHaushaltErstellen);
+                            finish();
+
+                        }else {
+                            Intent zeigeStart = new Intent(this, Start.class);
+                            Bundle extras = new Bundle();
+                            extras.putString("EXTRA_idHaushalt", responseIstHaushaltVorhanden);
+                            zeigeStart.putExtras(extras);
+                            startActivity(zeigeStart);
+                            finish();
+                        }
+                    }, error -> Toast.makeText(Login.this, error.toString().trim(), Toast.LENGTH_SHORT).show())
+
+                    {
+                        @NonNull
+                        @Override
+                        protected Map<String, String> getParams() {
+                        Map<String, String> data = new HashMap<>();
+                        data.put("email", email);
+                        return data;
+                    }
+                    };
+
+                    RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+                    requestQueue.add(stringRequestIstHaushaltVorhanden);
+
+
                 } else if (response.equals("failure")) {
                     Toast.makeText(Login.this, "Login fehlgeschlagen", Toast.LENGTH_SHORT).show();
                 }
@@ -74,4 +106,5 @@ public class Login extends Activity {
         finish();
     }
 }
+
 

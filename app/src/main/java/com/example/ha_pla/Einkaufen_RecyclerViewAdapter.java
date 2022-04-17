@@ -1,7 +1,6 @@
 package com.example.ha_pla;
 
 import android.content.Context;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +19,7 @@ public class Einkaufen_RecyclerViewAdapter extends RecyclerView.Adapter<Einkaufe
     public Einkaufen_RecyclerViewAdapter(Context context, ArrayList<EinkaufenData> einkaufsliste) {
         this.context = context;
         this.einkaufsliste = einkaufsliste;
+
     }
 
     @NonNull
@@ -28,23 +28,26 @@ public class Einkaufen_RecyclerViewAdapter extends RecyclerView.Adapter<Einkaufe
         //layout fuer jede zeile anzeigen
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.einkaufen_listenobjekt_layout, parent, false);
+
         return new Einkaufen_RecyclerViewAdapter.MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull Einkaufen_RecyclerViewAdapter.MyViewHolder holder, int position) {
        //zeige data je nach position im recyclerview
+
        holder.checked_tVEinkaufListenobjekt.setText(einkaufsliste.get(position).getEinkaufsobjekt());
 
     }
 
     @Override
     public int getItemCount() {
+
         return einkaufsliste.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
 
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
         CheckedTextView checked_tVEinkaufListenobjekt;
 
         public MyViewHolder(@NonNull View itemView) {

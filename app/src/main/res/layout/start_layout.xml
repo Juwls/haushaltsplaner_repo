@@ -8,7 +8,7 @@
     android:elevation="@dimen/cardview_default_elevation">
 
     <TextView
-        android:id="@+id/tVStartTitel"
+        android:id="@+id/appname_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#4C7839"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonStartHaushalt"
+        android:id="@+id/haushalt"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/box_gap_horizontal"
@@ -40,14 +40,14 @@
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textColorLink="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/ButtonStartPutzen"
-        app:layout_constraintEnd_toStartOf="@+id/ButtonStartEinkaufen"
+        app:layout_constraintBottom_toTopOf="@+id/putzen"
+        app:layout_constraintEnd_toStartOf="@+id/einkaufen"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tVStartTitel" />
+        app:layout_constraintTop_toBottomOf="@+id/appname_title" />
 
     <Button
-        android:id="@+id/ButtonStartEinkaufen"
+        android:id="@+id/einkaufen"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/box_gap_horizontal"
@@ -62,14 +62,14 @@
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textColorLink="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/ButtonStartToDo"
+        app:layout_constraintBottom_toTopOf="@+id/todo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonStartHaushalt"
-        app:layout_constraintTop_toBottomOf="@+id/tVStartTitel" />
+        app:layout_constraintStart_toEndOf="@+id/haushalt"
+        app:layout_constraintTop_toBottomOf="@+id/appname_title" />
 
     <Button
-        android:id="@+id/ButtonStartPutzen"
+        android:id="@+id/putzen"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/box_gap_horizontal"
@@ -85,14 +85,14 @@
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textColorLink="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/ButtonStartFinanzVar"
-        app:layout_constraintEnd_toStartOf="@+id/ButtonStartToDo"
+        app:layout_constraintBottom_toTopOf="@+id/finanzvar"
+        app:layout_constraintEnd_toStartOf="@+id/todo"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonStartHaushalt" />
+        app:layout_constraintTop_toBottomOf="@+id/haushalt" />
 
     <Button
-        android:id="@+id/ButtonStartToDo"
+        android:id="@+id/todo"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/box_gap_horizontal"
@@ -108,14 +108,14 @@
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textColorLink="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/ButtonStartFinanzFix"
+        app:layout_constraintBottom_toTopOf="@+id/finanzfix"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/ButtonStartPutzen"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonStartEinkaufen" />
+        app:layout_constraintStart_toEndOf="@+id/putzen"
+        app:layout_constraintTop_toBottomOf="@+id/einkaufen" />
 
     <Button
-        android:id="@+id/ButtonStartFinanzVar"
+        android:id="@+id/finanzvar"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/box_gap_horizontal"
@@ -132,13 +132,13 @@
         android:textColor="#FFFFFF"
         android:textColorLink="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/ButtonStartFinanzFix"
+        app:layout_constraintEnd_toStartOf="@+id/finanzfix"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonStartPutzen" />
+        app:layout_constraintTop_toBottomOf="@+id/putzen" />
 
     <Button
-        android:id="@+id/ButtonStartFinanzFix"
+        android:id="@+id/finanzfix"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/box_gap_horizontal"
@@ -157,6 +157,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/ButtonStartFinanzVar"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonStartToDo" />
+        app:layout_constraintStart_toEndOf="@+id/finanzvar"
+        app:layout_constraintTop_toBottomOf="@+id/todo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

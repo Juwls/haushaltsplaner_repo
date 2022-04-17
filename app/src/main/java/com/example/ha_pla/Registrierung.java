@@ -24,6 +24,7 @@ public class Registrierung extends Activity {
     private EditText eTVorname, eTNachname, eTBenutzername, eTEmail, eTPasswort;
     private TextView tVAlreadyRegistered;
     private Button btnRegister;
+    //private final String URL = "http://87.106.169.186/hapla/android/registration.php";
     private final String URL = "http://10.0.2.2/android/registration.php";
     private String vorname, nachname, benutzername, email, passwort;
 
